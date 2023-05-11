@@ -1,6 +1,6 @@
 {
   "name": "chatbot-ui-authjs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Next Auth extension for the Chatbot UI project",
   "main": "index.js",
   "types": "index.d.ts",
