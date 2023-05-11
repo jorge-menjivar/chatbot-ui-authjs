@@ -2,6 +2,8 @@
   "name": "chatbot-ui-authjs",
   "version": "1.0.4",
   "description": "Next Auth extension for the Chatbot UI project",
+  "homepage": "https://github.com/jorge-menjivar/chatbot-ui-authjs#readme",
+  "repository": "https://github.com/jorge-menjivar/chatbot-ui-authjs",
   "main": "index.js",
   "types": "index.d.ts",
   "keywords": [
