@@ -1,10 +1,12 @@
 import { withAuth } from 'next-auth/middleware';
 
+import { AUTH_ENABLED } from 'chatbot-ui-core/utils/const';
+
 const getSecret = () => {
-  if (process.env.NEXT_PUBLIC_AUTH_ENABLED == 'true') {
-    return process.env.NEXTAUTH_SECRET || '';
+  if (!AUTH_ENABLED) {
+    return 'auth_not_enabled';
   } else {
-    return 'no_secret';
+    return process.env.NEXTAUTH_SECRET;
   }
 };
 

@@ -24,7 +24,7 @@
   "author": "Jorge Menjivar <jorgemenjivar1997@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "chatbot-ui-core": "^1.0.19",
+    "chatbot-ui-core": "^1.0.20",
     "next": "^13.4.1",
     "next-auth": "^4.22.1",
     "react": "^18.2.0",
