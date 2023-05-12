@@ -1,6 +1,12 @@
 import { withAuth } from 'next-auth/middleware';
 
-export const abc = process.env.NEXT_PUBLIC_AUTH_ENABLED == 'true' || false;
+const getSecret = () => {
+  if (process.env.NEXT_PUBLIC_AUTH_ENABLED) {
+    return process.env.NEXTAUTH_SECRET || '';
+  } else {
+    return 'no_secret';
+  }
+};
 
 export default withAuth({
   callbacks: {
@@ -20,5 +26,5 @@ export default withAuth({
       }
     },
   },
-  secret: process.env.NEXTAUTH_SECRET || '',
+  secret: getSecret(),
 });
