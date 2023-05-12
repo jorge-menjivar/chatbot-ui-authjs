@@ -1,7 +1,7 @@
 import { withAuth } from 'next-auth/middleware';
 
 const getSecret = () => {
-  if (process.env.NEXT_PUBLIC_AUTH_ENABLED) {
+  if (process.env.NEXT_PUBLIC_AUTH_ENABLED == 'true') {
     return process.env.NEXTAUTH_SECRET || '';
   } else {
     return 'no_secret';
