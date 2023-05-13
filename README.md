@@ -6,7 +6,7 @@ This extension provides NextAuth SSO support to [Chatbot UI](https://github.com/
 
 ### Step 1
 
-Install this extension with npm:
+The extension comes pre-installed with the base version of [Chatbot UI](https://github.com/jorge-menjivar/chatbot-ui). However, if for any reason you need to re-install this extension, you can do so with npm:
 
 ```sh
 npm i chatbot-ui-authjs@latest
