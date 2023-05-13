@@ -15,6 +15,8 @@ import SpotifyProvider from 'next-auth/providers/spotify';
 import TwitchProvider from 'next-auth/providers/twitch';
 import TwitterProvider from 'next-auth/providers/twitter';
 
+import { dockerEnvVarFix } from 'chatbot-ui-core/utils/docker';
+
 const authorization = {
   params: {
     prompt: 'login',
@@ -23,141 +25,141 @@ const authorization = {
   },
 };
 const providers = [];
-if (process.env.APPLE_CLIENT_ID) {
+if (dockerEnvVarFix(process.env.APPLE_CLIENT_ID)) {
   providers.push(
     AppleProvider({
-      clientId: process.env.APPLE_CLIENT_ID!,
-      clientSecret: process.env.APPLE_CLIENT_SECRET!,
+      clientId: dockerEnvVarFix(process.env.APPLE_CLIENT_ID)!,
+      clientSecret: dockerEnvVarFix(process.env.APPLE_CLIENT_SECRET)!,
       authorization: authorization,
     }),
   );
 }
-if (process.env.AUTH0_CLIENT_ID) {
+if (dockerEnvVarFix(process.env.AUTH0_CLIENT_ID)) {
   providers.push(
     Auth0Provider({
-      clientId: process.env.AUTH0_CLIENT_ID!,
-      clientSecret: process.env.AUTH0_CLIENT_SECRET!,
+      clientId: dockerEnvVarFix(process.env.AUTH0_CLIENT_ID)!,
+      clientSecret: dockerEnvVarFix(process.env.AUTH0_CLIENT_SECRET)!,
       authorization: authorization,
     }),
   );
 }
-if (process.env.COGNITO_CLIENT_ID) {
+if (dockerEnvVarFix(process.env.COGNITO_CLIENT_ID)) {
   providers.push(
     CognitoProvider({
-      clientId: process.env.COGNITO_CLIENT_ID!,
-      clientSecret: process.env.COGNITO_CLIENT_SECRET!,
+      clientId: dockerEnvVarFix(process.env.COGNITO_CLIENT_ID)!,
+      clientSecret: dockerEnvVarFix(process.env.COGNITO_CLIENT_SECRET)!,
       authorization: authorization,
     }),
   );
 }
-if (process.env.DISCORD_CLIENT_ID) {
+if (dockerEnvVarFix(process.env.DISCORD_CLIENT_ID)) {
   providers.push(
     DiscordProvider({
-      clientId: process.env.DISCORD_CLIENT_ID!,
-      clientSecret: process.env.DISCORD_CLIENT_SECRET!,
+      clientId: dockerEnvVarFix(process.env.DISCORD_CLIENT_ID)!,
+      clientSecret: dockerEnvVarFix(process.env.DISCORD_CLIENT_SECRET)!,
       authorization: authorization,
     }),
   );
 }
-if (process.env.FACEBOOK_CLIENT_ID) {
+if (dockerEnvVarFix(process.env.FACEBOOK_CLIENT_ID)) {
   providers.push(
     FacebookProvider({
-      clientId: process.env.FACEBOOK_CLIENT_ID!,
-      clientSecret: process.env.FACEBOOK_CLIENT_SECRET!,
+      clientId: dockerEnvVarFix(process.env.FACEBOOK_CLIENT_ID)!,
+      clientSecret: dockerEnvVarFix(process.env.FACEBOOK_CLIENT_SECRET)!,
       authorization: authorization,
     }),
   );
 }
-if (process.env.GITHUB_CLIENT_ID) {
+if (dockerEnvVarFix(process.env.GITHUB_CLIENT_ID)) {
   providers.push(
     GithubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID!,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+      clientId: dockerEnvVarFix(process.env.GITHUB_CLIENT_ID)!,
+      clientSecret: dockerEnvVarFix(process.env.GITHUB_CLIENT_SECRET)!,
       authorization: authorization,
     }),
   );
 }
-if (process.env.GITLAB_CLIENT_ID) {
+if (dockerEnvVarFix(process.env.GITLAB_CLIENT_ID)) {
   providers.push(
     GitlabProvider({
-      clientId: process.env.GITLAB_CLIENT_ID!,
-      clientSecret: process.env.GITLAB_CLIENT_SECRET!,
+      clientId: dockerEnvVarFix(process.env.GITLAB_CLIENT_ID)!,
+      clientSecret: dockerEnvVarFix(process.env.GITLAB_CLIENT_SECRET)!,
       authorization: authorization,
     }),
   );
 }
-if (process.env.GOOGLE_CLIENT_ID) {
+if (dockerEnvVarFix(process.env.GOOGLE_CLIENT_ID)) {
   providers.push(
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+      clientId: dockerEnvVarFix(process.env.GOOGLE_CLIENT_ID)!,
+      clientSecret: dockerEnvVarFix(process.env.GOOGLE_CLIENT_SECRET)!,
       authorization: authorization,
     }),
   );
 }
-if (process.env.OKTA_CLIENT_ID) {
+if (dockerEnvVarFix(process.env.OKTA_CLIENT_ID)) {
   providers.push(
     OktaProvider({
-      clientId: process.env.OKTA_CLIENT_ID!,
-      clientSecret: process.env.OKTA_CLIENT_SECRET!,
+      clientId: dockerEnvVarFix(process.env.OKTA_CLIENT_ID)!,
+      clientSecret: dockerEnvVarFix(process.env.OKTA_CLIENT_SECRET)!,
       authorization: authorization,
     }),
   );
 }
-if (process.env.REDDIT_CLIENT_ID) {
+if (dockerEnvVarFix(process.env.REDDIT_CLIENT_ID)) {
   providers.push(
     RedditProvider({
-      clientId: process.env.REDDIT_CLIENT_ID!,
-      clientSecret: process.env.REDDIT_CLIENT_SECRET!,
+      clientId: dockerEnvVarFix(process.env.REDDIT_CLIENT_ID)!,
+      clientSecret: dockerEnvVarFix(process.env.REDDIT_CLIENT_SECRET)!,
       authorization: authorization,
     }),
   );
 }
-if (process.env.SALESFORCE_CLIENT_ID) {
+if (dockerEnvVarFix(process.env.SALESFORCE_CLIENT_ID)) {
   providers.push(
     SalesforceProvider({
-      clientId: process.env.SALESFORCE_CLIENT_ID!,
-      clientSecret: process.env.SALESFORCE_CLIENT_SECRET!,
+      clientId: dockerEnvVarFix(process.env.SALESFORCE_CLIENT_ID)!,
+      clientSecret: dockerEnvVarFix(process.env.SALESFORCE_CLIENT_SECRET)!,
       authorization: authorization,
     }),
   );
 }
 
-if (process.env.SLACK_CLIENT_ID) {
+if (dockerEnvVarFix(process.env.SLACK_CLIENT_ID)) {
   providers.push(
     SlackProvider({
-      clientId: process.env.SLACK_CLIENT_ID!,
-      clientSecret: process.env.SLACK_CLIENT_SECRET!,
+      clientId: dockerEnvVarFix(process.env.SLACK_CLIENT_ID)!,
+      clientSecret: dockerEnvVarFix(process.env.SLACK_CLIENT_SECRET)!,
       authorization: authorization,
     }),
   );
 }
 
-if (process.env.SPOTIFY_CLIENT_ID) {
+if (dockerEnvVarFix(process.env.SPOTIFY_CLIENT_ID)) {
   providers.push(
     SpotifyProvider({
-      clientId: process.env.SPOTIFY_CLIENT_ID!,
-      clientSecret: process.env.SPOTIFY_CLIENT_SECRET!,
+      clientId: dockerEnvVarFix(process.env.SPOTIFY_CLIENT_ID)!,
+      clientSecret: dockerEnvVarFix(process.env.SPOTIFY_CLIENT_SECRET)!,
       authorization: authorization,
     }),
   );
 }
 
-if (process.env.TWITCH_CLIENT_ID) {
+if (dockerEnvVarFix(process.env.TWITCH_CLIENT_ID)) {
   providers.push(
     TwitchProvider({
-      clientId: process.env.TWITCH_CLIENT_ID!,
-      clientSecret: process.env.TWITCH_CLIENT_SECRET!,
+      clientId: dockerEnvVarFix(process.env.TWITCH_CLIENT_ID)!,
+      clientSecret: dockerEnvVarFix(process.env.TWITCH_CLIENT_SECRET)!,
       authorization: authorization,
     }),
   );
 }
 
-if (process.env.TWITTER_CLIENT_ID) {
+if (dockerEnvVarFix(process.env.TWITTER_CLIENT_ID)) {
   providers.push(
     TwitterProvider({
-      clientId: process.env.TWITTER_CLIENT_ID!,
-      clientSecret: process.env.TWITTER_CLIENT_SECRET!,
+      clientId: dockerEnvVarFix(process.env.TWITTER_CLIENT_ID)!,
+      clientSecret: dockerEnvVarFix(process.env.TWITTER_CLIENT_SECRET)!,
       authorization: authorization,
     }),
   );

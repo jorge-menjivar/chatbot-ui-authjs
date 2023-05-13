@@ -20,6 +20,9 @@ Turn on authentication for [Chatbot UI](https://github.com/jorge-menjivar/chatbo
 NEXT_PUBLIC_AUTH_ENABLED=true
 ```
 
+**Important!**
+If using docker, also set the variable in the `docker.env` file.
+
 ### Steps 3
 
 Add the IDs and client secrets of the providers you want to enable in the `env.local` file. See below.
@@ -28,15 +31,16 @@ Add the IDs and client secrets of the providers you want to enable in the `env.l
 
 When using this extension, the following environment variables can be set:
 
-| Environment Variable        | Default value           | Description                                                                                |
-| --------------------------- | ----------------------- | ------------------------------------------------------------------------------------------ |
-| NEXTAUTH_EMAIL_PATTERN      |                         | The email regex pattern granted access to chatbot-ui. For example `.+@mydomain.com`        |
-| NEXTAUTH_URL                | `http://localhost:3000` | NextAuth Settings. See [Official Document](https://next-auth.js.org/configuration/options) |
-| NEXTAUTH_SECRET             |                         | NextAuth Settings. See [Official Document](https://next-auth.js.org/configuration/options) |
-| \<PROVIDER\>\_CLIENT_ID     |                         | Provider OAuth Client ID                                                                   |
-| \<PROVIDER\>\_CLIENT_SECRET |                         | Provider OAuth Client Secret                                                               |
+| Environment Variable        | Default value           | Description                                                                                                              |
+| --------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| NEXTAUTH_EMAIL_PATTERN      |                         | The email regex pattern granted access to chatbot-ui. For example `.+@mydomain.com`                                      |
+| NEXTAUTH_SECRET             |                         | NextAuth Settings. See [Documentation](https://next-auth.js.org/configuration/options#nextauth_secret)                   |
+| NEXTAUTH_URL                | `http://localhost:3000` | NextAuth Settings. See [Documentation](https://next-auth.js.org/configuration/options#nextauth_url)                      |
+| NEXTAUTH_URL_INTERNAL       |                         | (Optional) NextAuth Settings. See [Documentation](https://next-auth.js.org/configuration/options#nextauth_url_internal). |
+| \<PROVIDER\>\_CLIENT_ID     |                         | Provider OAuth Client ID                                                                                                 |
+| \<PROVIDER\>\_CLIENT_SECRET |                         | Provider OAuth Client Secret                                                                                             |
 
-Where provider is one of the following:
+Where \<PROVIDER\> is one of the following:
 
 - APPLE
 - AUTH0
