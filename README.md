@@ -14,14 +14,24 @@ npm i chatbot-ui-authjs@latest
 
 ### Step 2
 
-Turn on authentication for [Chatbot UI](https://github.com/jorge-menjivar/chatbot-ui) by setting the following env variable in `.env.local`. You may need to create the file.
+Turn on authentication for [Chatbot UI](https://github.com/jorge-menjivar/chatbot-ui) by setting the following env variables.
+
+#### Local Build
+
+Set the following in `.env.local`.
 
 ```sh
 NEXT_PUBLIC_AUTH_ENABLED=true
 ```
 
-**Important!**
-If using docker, also set the variable in the `docker.env` file.
+#### Docker Build
+
+Set the following in `.env.local` and in `docker.env`:
+
+```sh
+NEXT_PUBLIC_AUTH_ENABLED=true
+NEXTAUTH_URL_INTERNAL=http://chatbot:3000
+```
 
 ### Steps 3
 
